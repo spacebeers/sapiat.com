@@ -1,0 +1,96 @@
+.charts-box {
+    padding: 0;
+
+    .charts-content {
+        padding-bottom: 40px;
+    }
+
+    .tabs-bottom {
+        background: white;
+    }
+
+    label {
+        color: @secondary;
+    }
+}
+
+#chartError {
+    display: none;
+}
+
+#chartTabs {
+    li::before {
+        display: none;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    tr {
+        cursor: pointer;
+    }
+
+    td {
+        padding: 8px;
+    }
+
+    th {
+        .sort {
+            width: 100%;
+            position: relative;
+            background: transparent;
+            border: none;
+            padding-right: 12px;
+            color: @secondary;
+        }
+    }
+
+    .tab-content {
+        padding-top: 30px;
+    }
+
+    .form-group {
+        text-align: right;
+    }
+}
+
+.charts-table {
+    background: white;
+
+    td {
+        background: white;
+        color: @secondary;
+    }
+}
+
+.sort::after {
+    color: @primary;
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+}
+
+.sort.asc::after {
+  content: '\25BC';
+
+}
+.sort.desc::after {
+  content: '\25B2';
+}
+
+[data-embed-chart] {
+    text-align: center;
+    margin-top: 0;
+}
+
+.embed-loader {
+    background: url(assets/spinner.svg);
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}

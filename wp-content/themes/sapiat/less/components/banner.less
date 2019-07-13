@@ -1,0 +1,153 @@
+@banner-height: 70vh;
+@banner-height-lg: 35vh;
+
+.transitionBanner {
+    opacity: 1;
+}
+
+.banner {
+    position: relative;
+    min-height: @banner-height;
+    @media (min-width: @screen-md-min) {
+        min-height: @banner-height-lg;
+    }
+    overflow: hidden;
+
+    .loader {
+        width: 200px;
+        height: 200px;
+        display: block;
+        margin: 50px auto;
+    }
+
+    .slick-slider {
+        margin-bottom: 0 !important;
+    }
+
+    .wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: left;
+    }
+
+    .slick-track {
+        height: @banner-height;
+        @media (min-width: @screen-md-min) {
+            height: @banner-height-lg;
+        }
+    }
+
+    .banner-content {
+        display: flex;
+    }
+
+    .banner-left {
+        flex: 0 0 100%;
+        @media (min-width: @screen-sm-min) {
+            flex: 0 0 60%;
+        }
+    }
+
+    .banner-right {
+        position: relative;
+        display: none;
+        @media (min-width: @screen-sm-min) {
+            display: block;
+        }
+        flex: 0 0 30%;
+        text-align: center;
+
+        img {
+            width: 85%;
+            height: auto;
+            position: absolute;
+            margin: auto;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+    .aligner {
+        text-align: center;
+        @media (min-width: @screen-md-min) {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: left;
+        }
+    }
+
+
+
+    .gallery-image {
+        height: 100%;
+        direction: block;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .container {
+        display: none;
+    }
+
+    .slick-slide .container {
+        display: block;
+        z-index: 2;
+        margin-top: 30px;
+        @media (min-width: @screen-md-min) {
+            margin-top: 0;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    h1, p {
+        color: @palette-lightest;
+    }
+
+    h1 {
+        font-family: @primary-font-light;
+        font-size: 2.7rem;
+        @media (min-width: @screen-sm-min) {
+            font-size: 3.5rem;
+        }
+    }
+
+    .btn {
+        margin-top: 15px;
+        font-size: 1.7rem;
+    }
+
+    .slick-dots {
+        bottom: 15px;
+        z-index: 2;
+
+        li::before {
+            display: none;
+        }
+
+        li button::before {
+            font-size: 1px;
+            background: @palette-lightest;
+            color: @palette-lightest;
+            width: 14px;
+            height: 14px;
+        }
+
+        .slick-active {
+            button::before {
+                color: @palette-lightest;
+            }
+        }
+    }
+}

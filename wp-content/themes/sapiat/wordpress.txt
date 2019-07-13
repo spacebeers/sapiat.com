@@ -1,0 +1,6 @@
+wp core download
+
+wp core config --dbname=sapiat --dbuser=root --dbpass=password --dbhost=localhost
+
+wp core install --url='http://localhost/sapiat.co.uk' --title='Matchbox Media' --admin_user=admin --admin_password=doughnuts --admin_email='andyhowell@outlook.co.uk'
+

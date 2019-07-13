@@ -1,0 +1,106 @@
+.dropdown-box {
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+
+    &::after {
+        content: '\25BE';
+        pointer-events: none;
+        color: white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 9px;
+    }
+
+    .form-control {
+        font-size: 1.5rem;
+        background: @palette-default;
+        color: white;
+        -webkit-appearance: none;
+        -moz-appearance:    none;
+        appearance:         none;
+        border: none;
+    }
+
+    &.light {
+        &::after {
+            color: @primary;
+        }
+
+        .form-control {
+            background: white;
+            color: @primary;
+        }
+    }
+}
+
+#loader {
+    z-index: 99999;
+    display: none;
+    &::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: white;
+        opacity: 0.5;
+    }
+    svg {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.modal {
+    input, select, textarea {
+        border: 1px solid @palette-default !important;
+        border-radius: 3px !important;
+        color: @palette-dark !important;
+    }
+}
+
+#feed {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        background: white;
+        margin-bottom: 10px;
+        padding: 10px;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .interact {
+        a {
+            margin-right: 10px;
+        }
+    }
+}
+
+.btn-tertiary {
+    .button-variant(white; @tertiary; @tertiary);
+    font-family: @primary-font-light;
+}
+
+.wpforms-submit {
+    background: @primary !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-family: @primary-font-light !important;
+}
+
+.btn-secondary {
+  .button-variant(white; @secondary; @secondary);
+}

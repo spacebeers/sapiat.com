@@ -1,0 +1,122 @@
+p {
+    margin: 0;
+}
+
+p + p {
+    margin: 15px 0 0 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: @primary-font-bold;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: @secondary;
+    text-transform: uppercase;
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+h1, .h1 {
+    font-size: 3.0rem;
+    @media(min-width: @screen-sm-min) {
+        font-size: 5.0rem;
+    }
+    @media(min-width: @screen-md-min) {
+        font-size: 6.0rem;
+    }
+    font-weight: @weight-light;
+}
+
+h2 {
+    font-size: 2.4rem;
+    @media(min-width: @screen-sm-min) {
+        font-size: 2.2rem;
+    }
+}
+
+h2 {
+    font-size: 2.2rem;
+    @media(min-width: @screen-sm-min) {
+        font-size: 2.0rem;
+    }
+}
+
+.btn {
+    font-size: 1.4rem;
+    font-family: @body-font;
+    font-weight: @weight-medium;
+}
+
+ul {
+    margin: 0 0 20px 0;
+    padding: 0 0 0 0;
+}
+
+ol {
+    margin-bottom: 20px;
+}
+
+ul li {
+  color: @body-font-color;
+  list-style: none;
+  position: relative;
+  padding-left: 15px;
+}
+
+ ul li::before {
+  color: @tertiary;
+  content: "\2022";
+  font-size: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.table {
+    margin-bottom: 30px;
+}
+
+table:not(.table) {
+    margin-top: 30px;
+    border: 2px solid #eee;
+    max-width: 100%;
+
+    @media(max-width: @screen-xs-max) {
+        display: block;
+    }
+
+    th {
+        color: @secondary;
+        font-family: @primary-font-bold;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #eee;
+
+        td:nth-child(even) {
+            background-color: white;
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: #eee;
+
+        td:nth-child(odd) {
+            background-color: white;
+        }
+    }
+
+    td {
+        padding: 3px 20px;
+    }
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

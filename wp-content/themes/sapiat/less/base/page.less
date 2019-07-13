@@ -1,0 +1,223 @@
+.header-page {
+    background: @primary;
+    background-image: url(assets/backdrop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    min-height: 150px;
+    display: flex;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        color: white;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: @primary-font-light;
+        font-size: 2.5rem;
+        @media (min-width: @screen-sm-min) {
+            font-size: 3.5rem;
+        }
+    }
+}
+
+p.timeline-Tweet-text {
+    font-size: 14px !important;
+}
+
+.content-main {
+    @media (min-width: @screen-sm-min) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .content-view {
+        padding: 30px 0 30px 0;
+        @media (min-width: @screen-sm-min) {
+            flex: 0 0 75%;
+            padding: 60px 60px 60px 0;
+        }
+        background: white;
+
+        &.full {
+            flex: 0 0 100%;
+        }
+    }
+
+    .content-side {
+        position: relative;
+        display: none;
+        padding: 30px 0 30px 0;
+        @media (min-width: @screen-sm-min) {
+            flex: 0 0 25%;
+            padding: 60px 0 60px 60px;
+            display: block;
+        }
+        background: @palette-mid;
+
+        &.always-show {
+            display: block;
+        }
+
+        &::before {
+            display: block;
+            @media (min-width: @screen-sm-min) {
+                display: none;
+            }
+            content: "";
+            background: @palette-mid;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 100%;
+            width: 50vw;
+        }
+
+        &::after {
+            content: "";
+            background: @palette-mid;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 100%;
+            width: 50vw;
+        }
+
+        ul {
+            color: @tertiary;
+
+            li + li {
+                margin-top: 15px;
+            }
+
+            a {
+                font-size: 1.6rem;
+                color: @secondary;
+                transition: color @ani-speed linear;
+                font-family: @primary-font-light;
+
+                &:hover {
+                    color: @tertiary;
+                }
+            }
+
+            .current_page_item {
+                a {
+                    color: @tertiary;
+                }
+            }
+        }
+
+        form {
+            margin-bottom: 20px;
+
+            input {
+                background: white !important;
+                padding: 4px !important;
+                border-radius: 4px !important;
+                color: @palette-default !important;
+            }
+        }
+    }
+
+    h2 {
+        font-size: 2.2rem;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+        border-bottom: 1px solid @primary;
+
+        a {
+            color: @secondary;
+        }
+    }
+}
+
+.login-page {
+    background-image: url(assets/backdrop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    height: 70vh;
+}
+
+.login-form {
+    background: white;
+    padding: 20px;
+    width: 80vw;
+    @media (min-width: @screen-sm-min) {
+        padding: 50px 30px;
+        width: 40vw;
+    }
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    display: inline-block;
+
+    label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+    input {
+        width: 80%;
+        border: none;
+        border-radius: 4px;
+        padding: 9px;
+        background: @palette-mid;
+        color: @palette-default;
+        font-size: 1.4rem;
+    }
+
+    .button {
+         &:extend(.btn);
+         &:extend(.btn-primary);
+    }
+
+    a {
+        color: @tertiary;
+        margin-top: 20px;
+        display: block;
+    }
+}
+
+.alert {
+    margin-bottom: 20px;
+}
+
+.search-list {
+    li {
+        margin-bottom: 20px;
+    }
+}
+
+.profile-form {
+    .form-control {
+        border: none;
+        border-radius: 4px;
+        padding: 12px 9px;
+        background: @palette-mid;
+        color: @palette-default;
+        font-size: 1.4rem;
+    }
+}
+
+.twitter-feed {
+    .widget-title {
+        font-family: @primary-font-bold;
+        color: @secondary;
+        font-size: 2.2rem;
+        line-height: 1.2;
+        @media(min-width: @screen-sm-min) {
+            font-size: 2.4rem;
+            line-height: 1.2;
+        }
+    }
+}
