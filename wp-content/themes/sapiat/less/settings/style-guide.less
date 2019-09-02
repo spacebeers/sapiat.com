@@ -1,78 +1,39 @@
-@font-face {
-    font-family: 'exoblack';
-    src: url('fonts/exo-black-webfont.woff2') format('woff2'),
-         url('fonts/exo-black-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'exobold';
-    src: url('fonts/exo-bold-webfont.woff2') format('woff2'),
-         url('fonts/exo-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'exomedium';
-    src: url('fonts/exo-medium-webfont.woff2') format('woff2'),
-         url('fonts/exo-medium-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'exoregular';
-    src: url('fonts/exo-regular-webfont.woff2') format('woff2'),
-         url('fonts/exo-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'moonbold';
-    src: url('fonts/moon_bold-webfont.woff2') format('woff2'),
-         url('fonts/moon_bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'moonlight';
-    src: url('fonts/moon_light-webfont.woff2') format('woff2'),
-         url('fonts/moon_light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 // Palette
-@primary: #96C1E8;
-@primary-fade: fade(@primary, 0.6);
-@secondary: #0D2B4C;
-@secondary-fade: fade(@secondary, 0.6);
-@tertiary: #fc6624;
+@primary: #071559;
+@primary-dark: #08273E;
+@primary-mid: #1C455A;
+@primary-light: #388BB4;
+
 
 @palette-darkest: #000000;
-@palette-dark: #B1B7BB;
-@palette-default: #A9A9B0;
-@palette-mid: #EFEEEE;
-@palette-light: #E9E9E9;
+@palette-dark: #08273E;
+@palette-default: #202020;
+@palette-mid: #202020;
+@palette-light: #EEEEEE;
 @palette-lightest: #ffffff;
 @body-bg: @palette-default;
 @body-font-color: #212121;
-@seperator-color: @palette-mid;
+@seperator-color: #DCDCDC;
 @palette-nav: @primary;
 
 // Type
+/*
+font-family: 'd-dindin-bold';
+font-family: 'd-din_expregular';
+font-family: 'd-dinregular';
+font-family: 'd-din_condenseddinCnBd';
+font-family: 'd-din_condensedregular';
+font-family: 'd-dindin-italic';
+font-family: 'd-din_expdinexp-italic';
+font-family: 'd-din_expdinexp-bold';
+*/
 
-@primary-font-bold: 'moonbold', sans-serif;
-@primary-font-light: 'moonlight', sans-serif;
+@body-font: 'd-dinregular', sans-serif;
+@body-font_bold: 'd-dindin-bold', sans-serif;
+@body-font_italic: 'd-dindin-italic', sans-serif;
+@body-font_light: 'd-din_condensedregular', sans-serif;
 
-@body-font: 'Source Sans Pro', sans-serif;
-@body-font-medium: 'Source Sans Pro', sans-serif;
-@body-font-bold: 'Source Sans Pro', sans-serif;
-@body-font-black: 'Source Sans Pro', sans-serif;
+@secondary-font: 'Nunito', sans-serif;
 
 @weight-strong: 600;
 @weight-medium: 400;

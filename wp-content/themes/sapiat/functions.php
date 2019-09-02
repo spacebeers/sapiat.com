@@ -1,6 +1,5 @@
 <?php
     require_once('includes/custom-login.php');
-    require_once('wp-bootstrap-navwalker.php');
     include('classes/Shortcodes.php');
     include('classes/social_widget.php');
     include('classes/contact_widget.php');
@@ -9,8 +8,6 @@
     // Menus
 	register_nav_menus( array(
 		'main_menu' => 'Main menu',
-		'secondary_menu' => 'Secondary menu',
-		'footer_menu' => 'Footer menu',
 		'resources_menu' => 'User menu'
 	) );
 
@@ -27,7 +24,7 @@
 
     // External CSS
     function sapiat_theme_name_styles() {
-        wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700', false );
+        wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap', false );
         wp_enqueue_style( 'wpb-slick', get_template_directory_uri() . '/vendor/slick/slick.css', false );
         wp_enqueue_style( 'wpb-editor', get_template_directory_uri() . '/editor-style.css', false );
         wp_enqueue_style( 'wpb-slick-theme', get_template_directory_uri() . '/vendor/slick/slick-theme.css', false );
@@ -40,8 +37,6 @@
     // Vendor scripts
 
     function sapiat_vendor_scripts() {
-        wp_enqueue_script( 'em-bootstrap', get_template_directory_uri() . '/vendor/bootstrap/dist/js/bootstrap.min.js', array ( 'jquery' ), 1.1, true);
-        wp_enqueue_script( 'em-slick', get_template_directory_uri() . '/vendor/slick/slick.min.js', array ( 'jquery' ), 1.1, true);
         wp_enqueue_script( 'em-download', get_template_directory_uri() . '/vendor/multi-download/browser.js', array ( 'jquery' ), 1.1, true);
         wp_enqueue_script( 'em-theme', get_template_directory_uri() . '/scripts/theme.js', array ( 'jquery' ), 1.1, true);
         wp_enqueue_script( 'em-listjs', get_template_directory_uri() . '/vendor/list.js/dist/list.min.js', array ( 'jquery' ), 1.1, true);
@@ -61,6 +56,22 @@
                 'public' => true,
                 'has_archive' => false,
                 'rewrite' => array('slug' => 'downloads'),
+                'supports' => array('title'),
+                'public' => true,
+                'exclude_from_search' => true,
+                'show_in_nav_menus'   => false,
+                'publicly_queryable'  => false
+            )
+        );
+        register_post_type('Product',
+            array(
+                'labels' => array(
+                    'name' => __( 'Products' ),
+                    'singular_name' => __( 'Product' )
+                ),
+                'public' => true,
+                'has_archive' => false,
+                'rewrite' => array('slug' => 'products'),
                 'supports' => array('title'),
                 'public' => true,
                 'exclude_from_search' => true,
@@ -257,8 +268,8 @@
 
     function sapiat_widgets_init() {
         register_sidebar( array(
-            'name' => __( 'Footer form one', 'sapiat' ),
-            'id' => 'footer-form-one-sidebar',
+            'name' => __( 'Footer one', 'sapiat' ),
+            'id' => 'footer-one-sidebar',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => "</aside>",
             'before_title' => '<div class="widget-title">',
@@ -266,8 +277,32 @@
         ));
 
         register_sidebar( array(
-            'name' => __( 'Footer form two', 'sapiat' ),
-            'id' => 'footer-form-two-sidebar',
+            'name' => __( 'Footer two', 'sapiat' ),
+            'id' => 'footer-two-sidebar',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => "</aside>",
+            'before_title' => '<div class="widget-title">',
+            'after_title' => '</div>',
+        ));
+        register_sidebar( array(
+            'name' => __( 'Footer three', 'sapiat' ),
+            'id' => 'footer-three-sidebar',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => "</aside>",
+            'before_title' => '<div class="widget-title">',
+            'after_title' => '</div>',
+        ));
+        register_sidebar( array(
+            'name' => __( 'Footer four', 'sapiat' ),
+            'id' => 'footer-four-sidebar',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => "</aside>",
+            'before_title' => '<div class="widget-title">',
+            'after_title' => '</div>',
+        ));
+        register_sidebar( array(
+            'name' => __( 'Footer five', 'sapiat' ),
+            'id' => 'footer-five-sidebar',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => "</aside>",
             'before_title' => '<div class="widget-title">',
@@ -275,26 +310,8 @@
         ));
 
         register_sidebar( array(
-            'name' => __( 'Footer social area', 'sapiat' ),
-            'id' => 'footer-social-sidebar',
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget' => "</aside>",
-            'before_title' => '<div class="widget-title">',
-            'after_title' => '</div>',
-        ));
-
-        register_sidebar( array(
-            'name' => __( 'Footer menu area', 'sapiat' ),
-            'id' => 'footer-menu-sidebar',
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget' => "</aside>",
-            'before_title' => '<div class="widget-title">',
-            'after_title' => '</div>',
-        ));
-
-        register_sidebar( array(
-            'name' => __( 'Content sidebar area', 'sapiat' ),
-            'id' => 'content-sidebar',
+            'name' => __( 'Footer information area', 'sapiat' ),
+            'id' => 'footer-information-sidebar',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => "</aside>",
             'before_title' => '<div class="widget-title">',
@@ -304,15 +321,6 @@
         register_sidebar( array(
             'name' => __( 'Resources sidebar area', 'sapiat' ),
             'id' => 'resources-sidebar',
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget' => "</aside>",
-            'before_title' => '<div class="widget-title">',
-            'after_title' => '</div>',
-        ));
-
-        register_sidebar( array(
-            'name' => __( 'Twitter feed area', 'sapiat' ),
-            'id' => 'twitter-sidebar',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => "</aside>",
             'before_title' => '<div class="widget-title">',
@@ -332,9 +340,6 @@
         register_widget( 'wpb_social_widget' );
     }
     add_action( 'widgets_init', 'wpb_load_widget' );
-
-
-
 
 
     // Widgets ends
@@ -363,7 +368,7 @@
 
     function remove_admin_bar() {
         if (!current_user_can('administrator') && !is_admin()) {
-            show_admin_bar(false);
+            //show_admin_bar(false);
         }
     }
 
@@ -428,7 +433,7 @@
     add_action( 'admin_menu', 'my_remove_admin_menus' );
     function my_remove_admin_menus() {
         remove_menu_page( 'edit-comments.php' );
-        remove_menu_page('edit.php');
+        //remove_menu_page('edit.php');
     }
     // Removes from post and pages
     add_action('init', 'remove_comment_support', 100);
@@ -452,5 +457,38 @@
             $items .= '<li><a href="'. wp_logout_url() .'">'. __("Log Out") .'</a></li>';
         }
         return $items;
+    }
+
+    // Post support
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 825, 510, true );
+
+    // Create the Custom Excerpts callback
+    function sapiat_excerpt($length_callback = '', $more_callback = '') {
+        global $post;
+        if (function_exists($length_callback)) {
+            add_filter('excerpt_length', $length_callback);
+        }
+        if (function_exists($more_callback)) {
+            add_filter('excerpt_more', $more_callback);
+        }
+        $output = get_the_excerpt();
+        $output = apply_filters('wptexturize', $output);
+        $output = apply_filters('convert_chars', $output);
+        $output = '<p>' . $output . '</p>';
+        echo $output;
+    }
+
+    // Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
+    function sapiat_pagination()
+    {
+        global $wp_query;
+        $big = 999999999;
+        echo paginate_links(array(
+            'base' => str_replace($big, '%#%', get_pagenum_link($big)),
+            'format' => '?paged=%#%',
+            'current' => max(1, get_query_var('paged')),
+            'total' => $wp_query->max_num_pages
+        ));
     }
 ?>

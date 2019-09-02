@@ -56,51 +56,13 @@
     }
 }
 
-.modal {
-    input, select, textarea {
-        border: 1px solid @palette-default !important;
-        border-radius: 3px !important;
-        color: @palette-dark !important;
-    }
-}
-
-#feed {
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    li {
-        background: white;
-        margin-bottom: 10px;
-        padding: 10px;
-
-        &::before {
-            display: none;
-        }
-    }
-
-    .interact {
-        a {
-            margin-right: 10px;
-        }
-    }
-}
-
-.btn-tertiary {
-    .button-variant(white; @tertiary; @tertiary);
-    font-family: @primary-font-light;
-}
-
-.wpforms-submit {
-    background: @primary !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 4px !important;
-    font-family: @primary-font-light !important;
-}
-
-.btn-secondary {
-  .button-variant(white; @secondary; @secondary);
+.btn {
+    color: @primary;
+    border: 2px solid currentColor;
+    border-radius: 5px;
+    outline: none;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 14px 30px;
 }
