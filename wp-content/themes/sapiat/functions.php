@@ -72,11 +72,9 @@
                 'public' => true,
                 'has_archive' => false,
                 'rewrite' => array('slug' => 'products'),
-                'supports' => array('title'),
+                'supports' => array('title', 'editor', 'excerpt'),
                 'public' => true,
-                'exclude_from_search' => true,
-                'show_in_nav_menus'   => false,
-                'publicly_queryable'  => false
+                'exclude_from_search' => true
             )
         );
     }
