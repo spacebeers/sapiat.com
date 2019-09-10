@@ -19,6 +19,9 @@
                     <div class="col">
                         <?php dynamic_sidebar('footer-five-sidebar'); ?>
                     </div>
+                    <div class="col">
+                        <?php dynamic_sidebar('footer-six-sidebar'); ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -33,5 +36,6 @@
     <div id="loader">
         <?php echo file_get_contents(get_template_directory() . "/assets/spinner.svg"); ?>
     </div>
+    <?php wp_footer(); ?>
 </body>
 </html>

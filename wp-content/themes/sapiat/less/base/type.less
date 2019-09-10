@@ -18,8 +18,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
+    color: @primary;
+    transition: opacity 0.2s linear;
+    opacity: 1;
     &:hover {
         text-decoration: none;
+        opacity: 0.7;
     }
 }
 
@@ -34,13 +38,15 @@ a {
 }
 
 .icon-link {
-    
+    font-family: @body-font_light;
+    text-decoration: none;
 }
 
 h1, .h1 {
     margin-bottom: 35px;
     font-weight: @weight-light;
     font-size: 3.0rem;
+    line-height: 3.0rem;
     @media(min-width: @screen-sm-min) {
         font-size: 4.5rem;
     }

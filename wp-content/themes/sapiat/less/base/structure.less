@@ -14,12 +14,15 @@ body {
     font-size: 1.6rem;
     font-weight: 300;
     line-height: 2.4rem;
-    margin: 0;
+    margin: 72px 0 0 0;
+    @media (min-width: @screen-sm-min) {
+        margin: 116px 0 0 0;
+    }
     padding: 0;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
@@ -30,5 +33,32 @@ body {
     width: 100%;
     @media (min-width: @screen-sm-min) {
         width: 75%;
+    }
+}
+
+.strip {
+    background: @palette-lightest;
+    padding: 55px 0;
+
+    h2 {
+        text-align: center;
+    }
+
+    &.strip-dark {
+        background-color: @palette-light;
+    }
+}
+
+.home-page {
+    text-align: center;
+
+    .banner {
+        text-align: center;
+    }
+}
+
+.home {
+    .site-footer {
+        margin-top: 0;
     }
 }

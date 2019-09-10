@@ -1,5 +1,5 @@
 <?php
-    require_once('includes/custom-login.php');
+    //require_once('includes/custom-login.php');
     include('classes/Shortcodes.php');
     include('classes/social_widget.php');
     include('classes/contact_widget.php');
@@ -22,28 +22,25 @@
 
     // Menus ends
 
-    // External CSS
-    function sapiat_theme_name_styles() {
-        wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap', false );
-        wp_enqueue_style( 'wpb-slick', get_template_directory_uri() . '/vendor/slick/slick.css', false );
-        wp_enqueue_style( 'wpb-editor', get_template_directory_uri() . '/editor-style.css', false );
-        wp_enqueue_style( 'wpb-slick-theme', get_template_directory_uri() . '/vendor/slick/slick-theme.css', false );
-        wp_enqueue_style( 'dashicons' );
+    // Theme assets
+    function sapiat_theme_assets() {
+        wp_register_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap', false );
+        wp_enqueue_style( 'wpb-google-fonts' );
+        wp_register_script( 'sapiat-download', get_template_directory_uri() . '/vendor/multi-download/browser.js', array ( 'jquery' ), NULL, true);
+        wp_enqueue_script( 'sapiat-download' );
+        wp_register_script( 'sapiat-base', get_template_directory_uri() . '/scripts/theme.js', array( 'jquery' ), NULL, false );
+        wp_enqueue_script( 'sapiat-base' );
+        wp_register_script( 'sapiat-featherlight', get_template_directory_uri() . '/vendor/featherlight/release/featherlight.min.js', array( 'jquery' ), NULL, false );
+        wp_enqueue_script( 'sapiat-featherlight' );
+        wp_register_style( 'sapiat-featherlight-css', get_template_directory_uri() . '/vendor/featherlight/release/featherlight.min.css', false );
+        wp_enqueue_style( 'sapiat-featherlight-css' );
+        wp_register_style( 'sapiat-featherlight-gallery-css', get_template_directory_uri() . '/vendor/featherlight/release/featherlight.gallery.min.css', false );
+        wp_enqueue_style( 'sapiat-featherlight-gallery-css' );
     }
 
-    add_action( 'wp_enqueue_scripts', 'sapiat_theme_name_styles' );
-    // External CSS
+    add_action( 'wp_enqueue_scripts', 'sapiat_theme_assets' );
+    // Assets
 
-    // Vendor scripts
-
-    function sapiat_vendor_scripts() {
-        wp_enqueue_script( 'em-download', get_template_directory_uri() . '/vendor/multi-download/browser.js', array ( 'jquery' ), 1.1, true);
-        wp_enqueue_script( 'em-theme', get_template_directory_uri() . '/scripts/theme.js', array ( 'jquery' ), 1.1, true);
-        wp_enqueue_script( 'em-listjs', get_template_directory_uri() . '/vendor/list.js/dist/list.min.js', array ( 'jquery' ), 1.1, true);
-        wp_enqueue_style( 'em-icons-style', get_stylesheet_uri(), 'dashicons' );
-    }
-    add_action( 'wp_enqueue_scripts', 'sapiat_vendor_scripts' );
-    // Vendor scripts ends
 
     // Custom post types
    function create_posttype() {
@@ -69,11 +66,39 @@
                     'name' => __( 'Products' ),
                     'singular_name' => __( 'Product' )
                 ),
+                'hierarchical' => true,
                 'public' => true,
-                'has_archive' => false,
+                'has_archive' => true,
                 'rewrite' => array('slug' => 'products'),
                 'supports' => array('title', 'editor', 'excerpt'),
                 'public' => true,
+                'exclude_from_search' => true
+            )
+        );
+        register_post_type('Solution',
+            array(
+                'labels' => array(
+                    'name' => __( 'Solutions' ),
+                    'singular_name' => __( 'Solution' )
+                ),
+                'public' => true,
+                'has_archive' => true,
+                'rewrite' => array('slug' => 'solutions'),
+                'supports' => array('title', 'editor', 'excerpt'),
+                'public' => true,
+                'exclude_from_search' => true
+            )
+        );
+        register_post_type('Staff',
+            array(
+                'labels' => array(
+                    'name' => __( 'Staff' ),
+                    'singular_name' => __( 'Staff' )
+                ),
+                'public' => true,
+                'has_archive' => false,
+                'rewrite' => array('slug' => 'staff'),
+                'supports' => array('title', 'editor', 'thumbnail'),
                 'exclude_from_search' => true
             )
         );
@@ -106,6 +131,14 @@
             array(
                 'label' => __( 'Download Category' ),
                 'rewrite' => array( 'slug' => 'download_category' )
+            )
+        );
+	    register_taxonomy(
+            'product_category',
+            'product',
+            array(
+                'label' => __( 'Product Category' ),
+                'rewrite' => array( 'slug' => 'product_category' )
             )
         );
     }
@@ -301,6 +334,14 @@
         register_sidebar( array(
             'name' => __( 'Footer five', 'sapiat' ),
             'id' => 'footer-five-sidebar',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => "</aside>",
+            'before_title' => '<div class="widget-title">',
+            'after_title' => '</div>',
+        ));
+        register_sidebar( array(
+            'name' => __( 'Footer six', 'sapiat' ),
+            'id' => 'footer-six-sidebar',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => "</aside>",
             'before_title' => '<div class="widget-title">',

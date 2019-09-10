@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="35.267" height="17.145" viewBox="0 0 35.267 17.145"><defs><style>.a{fill:currentColor;}</style></defs><g transform="translate(35.267 17.145) rotate(180)"><path class="a" d="M35.266,8.572,18.129,0V7.277H0v2.59H18.129v7.277ZM20.718,4.2l8.76,4.377-8.76,4.377Z"/></g></svg>
+
+<svg width="24px" height="12px" viewBox="0 0 24 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="arrow-right" transform="translate(12.000000, 6.000000) scale(-1, 1) translate(-12.000000, -6.000000) " fill="currentColor" fill-rule="nonzero">
+            <path d="M23.889,5.807 L12.28,0 L12.28,4.93 L0,4.93 L0,6.684 L12.28,6.684 L12.28,11.614 L23.889,5.807 Z M14.035,2.84 L19.969,5.805 L14.035,8.77 L14.035,2.84 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

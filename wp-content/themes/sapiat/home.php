@@ -9,7 +9,7 @@
 
             <?php get_template_part('loop'); ?>
 
-            <footer class="posts-footer">
+            <footer class="posts-footer" style="display: none;">
                 <div>1</div>
                 <div>2</div>
             </footer>

@@ -57,12 +57,41 @@
 }
 
 .btn {
-    color: @primary;
-    border: 2px solid currentColor;
-    border-radius: 5px;
-    outline: none;
-    display: inline-block;
-    text-decoration: none;
-    font-size: 1.6rem;
-    padding: 14px 30px;
+    color: @primary !important;
+    background: transparent !important;
+    border: 2px solid currentColor !important;
+    border-radius: 5px !important;
+    outline: none !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    font-size: 1.6rem !important;
+    padding: 14px 30px !important;
+
+    &.btn-small {
+        font-size: 1.4rem !important;
+        padding: 4px 10px !important;
+    }
+
+    &.btn-white {
+        color: @palette-lightest !important;
+        border-color: @palette-lightest !important;
+    }
+}
+
+.wpforms-field {
+    label {
+        color: #262626 !important;
+        text-transform: uppercase !important;
+    }
+
+    input {
+        border: 1px solid #E1E1E1 !important;
+        border-radius: 0 !important;
+
+        &::placeholder {
+            font-size: 1.3rem;
+            color: #A4A4A4;
+        }
+    }
+
 }

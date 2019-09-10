@@ -2,10 +2,16 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 65vh;
+    height: 85vh;
+    padding-top: 90px;
+    @media (min-width: @screen-sm-min) {
+        padding-top: 0;
+        height: 65vh;
+    }
     margin-bottom: 45px;
     text-align: right;
     position: relative;
+    color: @palette-lightest;
 
     &::before {
         content: "";
@@ -25,15 +31,22 @@
     }
 
     h1 {
+        line-height: 1;
+        font-family: @body-font_bold;
         color: @palette-lightest;
-        font-size: 5.5rem;
+        font-size: 3.5rem;
         @media (min-width: @screen-sm-min) {
             font-size: 6.0rem;
+        }
+
+        span {
+            font-family: @body-font_light;
+            display: block;
         }
     }
 }
 
-.page-has-banner {
+.home, .product-template-default, .solution-template-default, .page-template-company-page {
     .site-header {
         background: transparent;
         position: relative;
