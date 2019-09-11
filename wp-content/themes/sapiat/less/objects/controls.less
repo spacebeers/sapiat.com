@@ -3,16 +3,6 @@
     margin-bottom: 20px;
     position: relative;
 
-    &::after {
-        content: '\25BE';
-        pointer-events: none;
-        color: white;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 9px;
-    }
-
     .form-control {
         font-size: 1.5rem;
         background: @palette-default;
@@ -21,6 +11,11 @@
         -moz-appearance:    none;
         appearance:         none;
         border: none;
+        width: 100%;
+
+        option {
+            margin: 5px 0;
+        }
     }
 
     &.light {
@@ -57,15 +52,7 @@
 }
 
 .btn {
-    color: @primary !important;
-    background: transparent !important;
-    border: 2px solid currentColor !important;
-    border-radius: 5px !important;
-    outline: none !important;
-    display: inline-block !important;
-    text-decoration: none !important;
-    font-size: 1.6rem !important;
-    padding: 14px 30px !important;
+    .button();
 
     &.btn-small {
         font-size: 1.4rem !important;

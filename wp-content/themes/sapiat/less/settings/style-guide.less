@@ -14,7 +14,9 @@
 @palette-lightest: #ffffff;
 @body-bg: @palette-default;
 @body-font-color: #212121;
+@body-font-light-color: #2E2E2E;
 @seperator-color: #DCDCDC;
+@form-background-color: #F6F6F6;
 @palette-nav: @primary;
 
 // Type
@@ -54,3 +56,15 @@ font-family: 'd-din_expdinexp-bold';
 @text-color: @palette-dark;
 
 @ani-speed: 0.3s;
+
+.button(@color: @primary) {
+    color: @color !important;
+    background: transparent !important;
+    border: 2px solid currentColor !important;
+    border-radius: 5px !important;
+    outline: none !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    font-size: 1.6rem !important;
+    padding: 14px 30px !important;
+}

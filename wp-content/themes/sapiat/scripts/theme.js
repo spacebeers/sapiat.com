@@ -36,8 +36,8 @@ jQuery(document).ready(function () {
         }
     });
 
-    jQuery('#user').attr('placeholder', 'username').attr('required', 'true');
-    jQuery('#pass').attr('placeholder', 'password').attr('required', 'true');
+    jQuery('#user').attr('placeholder', 'Enter your username').attr('required', 'true');
+    jQuery('#pass').attr('placeholder', 'Enter your password').attr('required', 'true');
 
     jQuery('.download-form select').on('change', function (e) {
         var $select = jQuery(this);

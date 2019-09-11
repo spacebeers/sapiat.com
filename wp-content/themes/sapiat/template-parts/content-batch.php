@@ -16,35 +16,49 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("page"); ?>>
-    <header class="header-page">
-        <div class="container">
-            <?php the_title('<h1>', '</h1>'); ?>
-        </div>
-    </header>
+  <div class="container">
+    <div class="constrainer">
+      <h1 class="underline-header"><?php the_title(); ?></h1>
 
-    <div class="container">
-      <div class="content-main">
-        <div class="content-view">
-            <?php the_content(); ?>
+      <div class="downloads-summary">
+        <?php the_content(); ?>
+      </div>
 
-            <div class="downloads">
+      <div class="downloads-layout">
+        <div class="downloads-list">
+          <h2>Downloads</h2>
+          <div class="downloads">
               <div class="download-container">
                 <?php
-                  $args = array(
-                    'post_type' => 'download',
-                    'posts_per_page' => 1000,
-                    'tax_query' => array(
-                      array(
-                        'taxonomy' => 'download_category',
-                        'field'    => 'slug',
-                        'terms'    => 'data',
+                  if (current_user_can('administrator')):
+                    $args = array(
+                      'post_type' => 'download',
+                      'posts_per_page' => 1000,
+                      'tax_query' => array(
+                        array(
+                          'taxonomy' => 'download_category',
+                          'field'    => 'slug',
+                          'terms'    => 'data',
+                        )
                       )
-                    ),
-                    'meta_query'	=> array(
-                      'relation'		=> 'OR',
-                      $meta
-                    )
-                  );
+                    );
+                  else:
+                    $args = array(
+                      'post_type' => 'download',
+                      'posts_per_page' => 1000,
+                      'tax_query' => array(
+                        array(
+                          'taxonomy' => 'download_category',
+                          'field'    => 'slug',
+                          'terms'    => 'data',
+                        )
+                      ),
+                      'meta_query'	=> array(
+                        'relation'		=> 'OR',
+                        $meta
+                      )
+                    );
+                  endif;
 
                   $the_query = new WP_Query( $args );
                 ?>
@@ -71,7 +85,7 @@
                           <small>Hold ctrl or cmd to select multiple files</small>
                         </div>
                       <?php } else {  ?>
-                        No downloads available
+                        <div class="no-downloads">No downloads available</div>
                       <?php }   ?>
                     </div>
                 </div>
@@ -79,21 +93,35 @@
 
               <div class="download-container">
                 <?php
-                  $args = array(
-                    'post_type' => 'download',
-                    'posts_per_page' => 1000,
-                    'tax_query' => array(
-                      array(
-                        'taxonomy' => 'download_category',
-                        'field'    => 'slug',
-                        'terms'    => 'document',
+                  if (current_user_can('administrator')):
+                    $args = array(
+                      'post_type' => 'download',
+                      'posts_per_page' => 1000,
+                      'tax_query' => array(
+                        array(
+                          'taxonomy' => 'download_category',
+                          'field'    => 'slug',
+                          'terms'    => 'document',
+                        )
                       )
-					),
-                    'meta_query'	=> array(
-                      'relation'		=> 'OR',
-                      $meta
-                    )
-                  );
+                    );
+                  else:
+                    $args = array(
+                      'post_type' => 'download',
+                      'posts_per_page' => 1000,
+                      'tax_query' => array(
+                        array(
+                          'taxonomy' => 'download_category',
+                          'field'    => 'slug',
+                          'terms'    => 'document',
+                        )
+                      ),
+                      'meta_query'	=> array(
+                        'relation'		=> 'OR',
+                        $meta
+                      )
+                    );
+                  endif;
                   $the_query = new WP_Query( $args );
                 ?>
                 <div class="flexy">
@@ -119,7 +147,7 @@
                           <small>Hold ctrl or cmd to select multiple files</small>
                         </div>
                       <?php } else {  ?>
-                        No downloads available
+                        <div class="no-downloads">No downloads available</div>
                       <?php }   ?>
                     </div>
                 </div>
@@ -127,21 +155,36 @@
 
               <div class="download-container">
                 <?php
-                  $args = array(
-                    'post_type' => 'download',
-                    'posts_per_page' => 1000,
-                    'tax_query' => array(
-                      array(
-                        'taxonomy' => 'download_category',
-                        'field'    => 'slug',
-                        'terms'    => 'applications',
+                  if (current_user_can('administrator')):
+                    $args = array(
+                      'post_type' => 'download',
+                      'posts_per_page' => 1000,
+                      'tax_query' => array(
+                        array(
+                          'taxonomy' => 'download_category',
+                          'field'    => 'slug',
+                          'terms'    => 'applications',
+                        )
                       )
-					),
-                    'meta_query'	=> array(
-                      'relation'		=> 'OR',
-                      $meta
-                    )
-                  );
+                    );
+                  else:
+                    $args = array(
+                      'post_type' => 'download',
+                      'posts_per_page' => 1000,
+                      'tax_query' => array(
+                        array(
+                          'taxonomy' => 'download_category',
+                          'field'    => 'slug',
+                          'terms'    => 'applications',
+                        )
+                      ),
+                      'meta_query'	=> array(
+                        'relation'		=> 'OR',
+                        $meta
+                      )
+                    );
+                  endif;
+
                   $the_query = new WP_Query( $args );
                 ?>
                 <div class="flexy">
@@ -175,21 +218,36 @@
 
               <div class="download-container">
                 <?php
-                  $args = array(
-                    'post_type' => 'download',
-                    'posts_per_page' => 1000,
-                    'tax_query' => array(
-                      array(
-                        'taxonomy' => 'download_category',
-                        'field'    => 'slug',
-                        'terms'    => 'databook',
+                  if (current_user_can('administrator')):
+                    $args = array(
+                      'post_type' => 'download',
+                      'posts_per_page' => 1000,
+                      'tax_query' => array(
+                        array(
+                          'taxonomy' => 'download_category',
+                          'field'    => 'slug',
+                          'terms'    => 'databook',
+                        )
                       )
-					),
-                    'meta_query'	=> array(
-                      'relation'		=> 'OR',
-                      $meta
-                    )
-                  );
+                    );
+                  else:
+                    $args = array(
+                      'post_type' => 'download',
+                      'posts_per_page' => 1000,
+                      'tax_query' => array(
+                        array(
+                          'taxonomy' => 'download_category',
+                          'field'    => 'slug',
+                          'terms'    => 'databook',
+                        )
+                      ),
+                      'meta_query'	=> array(
+                        'relation'		=> 'OR',
+                        $meta
+                      )
+                    );
+                  endif;
+
                   $the_query = new WP_Query( $args );
                 ?>
                 <div class="flexy">
@@ -215,18 +273,19 @@
                           <small>Hold ctrl or cmd to select multiple files</small>
                         </div>
                       <?php } else {  ?>
-                        No downloads available
+                        <div class="no-downloads">No downloads available</div>
                       <?php }   ?>
                     </div>
                 </div>
               </div>
             </div>
         </div>
-        <div class="content-side always-show">
+        <aside class="downloads-account">
           <h2>Your account</h2>
 
           <?php dynamic_sidebar('resources-sidebar'); ?>
-        </div>
+        </aside>
       </div>
     </div>
+  </div>
 </article>

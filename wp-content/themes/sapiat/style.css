@@ -191,159 +191,13 @@ font-family: 'd-din_expdinexp-bold';
 .staff-grid .staff_content {
   display: none;
 }
-.header-page {
-  background: #071559;
-  background-image: url(assets/backdrop.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  min-height: 150px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-.header-page h1 {
-  margin: 0;
-  padding: 0;
-  color: white;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  font-family: 'd-din_condensedregular', sans-serif;
-  font-size: 2.5rem;
-}
-@media (min-width: 768px) {
-  .header-page h1 {
-    font-size: 3.5rem;
-  }
-}
-p.timeline-Tweet-text {
-  font-size: 14px !important;
-}
-@media (min-width: 768px) {
-  .content-main {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
-.content-main .content-view {
-  padding: 30px 0 30px 0;
-  background: white;
-}
-@media (min-width: 768px) {
-  .content-main .content-view {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 75%;
-        -ms-flex: 0 0 75%;
-            flex: 0 0 75%;
-    padding: 60px 60px 60px 0;
-  }
-}
-.content-main .content-view.full {
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 100%;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-}
-.content-main .content-side {
-  position: relative;
-  display: none;
-  padding: 30px 0 30px 0;
-  background: #202020;
-}
-@media (min-width: 768px) {
-  .content-main .content-side {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 25%;
-        -ms-flex: 0 0 25%;
-            flex: 0 0 25%;
-    padding: 60px 0 60px 60px;
-    display: block;
-  }
-}
-.content-main .content-side.always-show {
-  display: block;
-}
-.content-main .content-side::before {
-  display: block;
-  content: "";
-  background: #202020;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 100%;
-  width: 50vw;
-}
-@media (min-width: 768px) {
-  .content-main .content-side::before {
-    display: none;
-  }
-}
-.content-main .content-side::after {
-  content: "";
-  background: #202020;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 100%;
-  width: 50vw;
-}
-.content-main .content-side ul {
-  color: #071559;
-}
-.content-main .content-side ul li + li {
-  margin-top: 15px;
-}
-.content-main .content-side ul a {
-  font-size: 1.6rem;
-  color: #071559;
-  -webkit-transition: color 0.3s linear;
-  -o-transition: color 0.3s linear;
-  transition: color 0.3s linear;
-  font-family: 'd-din_condensedregular', sans-serif;
-}
-.content-main .content-side ul a:hover {
-  color: #071559;
-}
-.content-main .content-side ul .current_page_item a {
-  color: #071559;
-}
-.content-main .content-side form {
-  margin-bottom: 20px;
-}
-.content-main .content-side form input {
-  background: white !important;
-  padding: 4px !important;
-  border-radius: 4px !important;
-  color: #202020 !important;
-}
-.content-main h2 {
-  font-size: 2.2rem;
-  padding-bottom: 15px;
-  margin-bottom: 25px;
-  border-bottom: 1px solid #071559;
-}
-.content-main h2 a {
-  color: #071559;
-}
 .login-page {
-  background-image: url(assets/backdrop.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
   text-align: center;
   height: 70vh;
 }
 .login-form {
-  background: white;
+  text-align: left;
+  background: #F6F6F6;
   padding: 20px;
   width: 80vw;
   position: relative;
@@ -356,28 +210,56 @@ p.timeline-Tweet-text {
 }
 @media (min-width: 768px) {
   .login-form {
-    padding: 50px 30px;
-    width: 40vw;
+    padding: 50px 100px;
+    width: 60vw;
   }
 }
 .login-form label {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+  display: block;
 }
 .login-form input {
-  width: 80%;
-  border: none;
-  border-radius: 4px;
-  padding: 9px;
-  background: #202020;
-  color: #202020;
+  width: 100%;
+  padding: 15px 20px;
+  background: #ffffff;
+  color: #212121;
   font-size: 1.4rem;
+  border: 1px solid #E1E1E1 !important;
+  border-radius: 0 !important;
+}
+.login-form input::-webkit-input-placeholder {
+  font-size: 1.3rem;
+  color: #A4A4A4;
+}
+.login-form input:-ms-input-placeholder {
+  font-size: 1.3rem;
+  color: #A4A4A4;
+}
+.login-form input::-ms-input-placeholder {
+  font-size: 1.3rem;
+  color: #A4A4A4;
+}
+.login-form input::placeholder {
+  font-size: 1.3rem;
+  color: #A4A4A4;
+}
+.login-form .login-submit {
+  text-align: right;
+}
+.login-form .login-remember input {
+  width: auto;
+  display: inline;
+}
+.login-form .button {
+  color: #071559 !important;
+  background: transparent !important;
+  border: 2px solid currentColor !important;
+  border-radius: 5px !important;
+  outline: none !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+  font-size: 1.6rem !important;
+  padding: 14px 30px !important;
+  width: auto;
 }
 .login-form a {
   color: #071559;
@@ -595,8 +477,7 @@ h2 {
     font-size: 2.5rem;
   }
 }
-.btn,
-.login-form .button {
+.btn {
   font-size: 1.4rem;
   font-family: 'd-dinregular', sans-serif;
   font-weight: 400;
@@ -607,20 +488,6 @@ ul {
 }
 ol {
   margin-bottom: 20px;
-}
-ul li {
-  color: #212121;
-  list-style: none;
-  position: relative;
-  padding-left: 15px;
-}
-ul li::before {
-  color: #071559;
-  content: "\2022";
-  font-size: 1em;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 .table {
   margin-bottom: 30px;
@@ -663,17 +530,6 @@ hr {
   margin-bottom: 20px;
   position: relative;
 }
-.dropdown-box::after {
-  content: '\25BE';
-  pointer-events: none;
-  color: white;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  right: 9px;
-}
 .dropdown-box .form-control {
   font-size: 1.5rem;
   background: #202020;
@@ -682,6 +538,10 @@ hr {
   -moz-appearance: none;
   appearance: none;
   border: none;
+  width: 100%;
+}
+.dropdown-box .form-control option {
+  margin: 5px 0;
 }
 .dropdown-box.light::after {
   color: #071559;
@@ -712,8 +572,7 @@ hr {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-.btn,
-.login-form .button {
+.btn {
   color: #071559 !important;
   background: transparent !important;
   border: 2px solid currentColor !important;
@@ -853,86 +712,73 @@ hr {
             flex: 0 0 65%;
   }
 }
-.downloads {
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  margin-top: 50px;
-}
-@media (min-width: 768px) {
-  .downloads {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
+.downloads-summary {
+  color: #2E2E2E;
+  font-size: 3rem;
+  line-height: 3.2rem;
+  margin-bottom: 55px;
 }
 .download-container {
-  background: #202020;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 100%;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-  margin-bottom: 20px;
+  border: 3px solid rgba(7, 21, 89, 0.58);
+  margin: 0 0 15px 0;
+}
+.download-container h3 {
+  font-family: 'd-dindin-bold', sans-serif;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+}
+.download-container .info {
+  color: #2E2E2E;
+  margin-bottom: 15px;
+}
+.download-container .no-downloads {
+  font-family: 'd-dindin-bold', sans-serif;
+  text-transform: uppercase;
+  color: #071559;
+}
+.downloads-layout {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  min-height: 300px;
-}
-@media (min-width: 768px) {
-  .download-container {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 49%;
-        -ms-flex: 0 0 49%;
-            flex: 0 0 49%;
-  }
-}
-.download-container .flexy {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
-.download-container .image {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  padding-top: 50%;
+.downloads-layout .downloads-list {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 65%;
+      -ms-flex: 0 0 65%;
+          flex: 0 0 65%;
 }
-.download-container .info {
-  padding: 15px;
-  color: #202020;
+.downloads-layout .downloads-account {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 30%;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
 }
-.download-container .controls {
-  padding: 0 15px 15px 15px;
+.downloads-layout .downloads-account ul {
+  list-style: none;
 }
-.download-container .btn {
-  font-size: 1.6rem;
-  padding: 4px 12px;
+.downloads-layout .downloads-account ul li + li {
+  margin-top: 10px;
+}
+.downloads-layout .downloads-account a {
+  text-decoration: none;
+  color: #212121;
+}
+.downloads-layout .downloads-account .current_page_item {
+  font-family: 'd-dindin-bold', sans-serif;
+}
+.downloads-layout .downloads-account .current_page_item a {
+  color: #071559;
+}
+.downloads-layout .flexy {
+  padding: 35px;
 }
 .site-footer {
   background: transparent -webkit-gradient(linear, left top, left bottom, from(#1C455A), to(#388BB4)) 0% 0% no-repeat padding-box;
@@ -1506,8 +1352,7 @@ hr {
   font-family: 'd-din_condensedregular', sans-serif;
   display: block;
 }
-.btn,
-.login-form .button {
+.btn {
   font-size: 2.1rem;
 }
 .btn-reverse {

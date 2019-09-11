@@ -1,3 +1,6 @@
+TEST
+
+
 <?php
   $data_group = get_field('data_content');
   $application_group = get_field('application_content');
@@ -16,13 +19,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("page"); ?>>
-    <header class="header-page">
-        <div class="container">
-            <?php the_title('<h1>', '</h1>'); ?>
-        </div>
-    </header>
-
     <div class="container">
+      <?php the_title('<h1>', '</h1>'); ?>
+
       <div class="content-main">
         <div class="content-view">
             <?php the_content(); ?>
@@ -30,21 +29,35 @@
             <div class="downloads">
               <div class="download-container">
                 <?php
-                  $args = array(
-                    'post_type' => 'download',
-                    'posts_per_page' => 1000,
-                    'tax_query' => array(
-                      array(
-                        'taxonomy' => 'download_category',
-                        'field'    => 'slug',
-                        'terms'    => 'data',
+                  if (current_user_can('administrator')):
+                    $args = array(
+                      'post_type' => 'download',
+                      'posts_per_page' => 1000,
+                      'tax_query' => array(
+                        array(
+                          'taxonomy' => 'download_category',
+                          'field'    => 'slug',
+                          'terms'    => 'data',
+                        )
                       )
-                    ),
-                    'meta_query'	=> array(
-                      'relation'		=> 'OR',
-                      $meta
-                    )
-                  );
+                    );
+                  else:
+                    $args = array(
+                      'post_type' => 'download',
+                      'posts_per_page' => 1000,
+                      'tax_query' => array(
+                        array(
+                          'taxonomy' => 'download_category',
+                          'field'    => 'slug',
+                          'terms'    => 'data',
+                        )
+                      ),
+                      'meta_query'	=> array(
+                        'relation'		=> 'OR',
+                        $meta
+                      )
+                    );
+                  endif;
 
                   $the_query = new WP_Query( $args );
                 ?>
@@ -87,7 +100,7 @@
                         'field'    => 'slug',
                         'terms'    => 'document',
                       )
-					),
+					          ),
                     'meta_query'	=> array(
                       'relation'		=> 'OR',
                       $meta
@@ -134,7 +147,7 @@
                         'field'    => 'slug',
                         'terms'    => 'applications',
                       )
-					),
+					          ),
                     'meta_query'	=> array(
                       'relation'		=> 'OR',
                       $meta
@@ -181,7 +194,7 @@
                         'field'    => 'slug',
                         'terms'    => 'databook',
                       )
-					),
+					          ),
                     'meta_query'	=> array(
                       'relation'		=> 'OR',
                       $meta
