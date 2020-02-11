@@ -68,17 +68,17 @@
                                 $testimonials->the_post();
                                 ?>
                                 <div class="staff-item">
-                                    <a href="#" data-featherlight="#staff_<?php the_id(); ?>">
+                                    <div class="staff-image">
                                         <?php the_post_thumbnail(); ?>
-                                    </a>
-                                    <h3>
-                                        <a href="#" data-featherlight="#staff_<?php the_id(); ?>">
-                                            <?php the_title(); ?>
-                                        </a>
-                                    </h3>
-                                    <p><?php the_field('role'); ?></p>
 
-                                    <div class="staff_content" id="staff_<?php the_id(); ?>"><?php the_content(); ?></div>
+                                        <div class="staff-hover">
+                                            <?php the_content(); ?>
+                                        </div>
+                                    </div>
+                                    <div class="staff_content">
+                                        <h3><?php the_title(); ?></h3>
+                                        <p><?php the_field('role'); ?></p>
+                                    </div>
                                 </div>
                                 <?php
                             endwhile;

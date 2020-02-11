@@ -66,16 +66,14 @@
 
 
             <form method="post">
-                <fieldset>
-                    <p>Please enter your username or email address. You will receive a link to create a new password via email.</p>
-                    <p><label for="user_login">Username or E-mail:</label>
-                        <?php $user_login = isset( $_POST['user_login'] ) ? $_POST['user_login'] : ''; ?>
-                        <input type="text" name="user_login" id="user_login" placeholder="Email address" value="<?php echo $user_login; ?>" /></p>
-                    <p>
-                        <input type="hidden" name="action" value="reset" />
-                        <input type="submit" value="Get New Password" class="button" id="submit" />
-                    </p>
-                </fieldset>
+                <p>Please enter your username or email address. You will receive a link to create a new password via email.</p>
+                <p><label for="user_login">Username or E-mail:</label>
+                    <?php $user_login = isset( $_POST['user_login'] ) ? $_POST['user_login'] : ''; ?>
+                    <input type="text" name="user_login" id="user_login" placeholder="Email address" value="<?php echo $user_login; ?>" /></p>
+                <p>
+                    <input type="hidden" name="action" value="reset" />
+                    <input type="submit" value="Get New Password" class="button" id="submit" />
+                </p>
             </form>
         </div>
     </article>

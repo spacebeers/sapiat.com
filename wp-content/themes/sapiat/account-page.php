@@ -59,20 +59,21 @@ get_header();
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class("page"); ?>>
-    <header class="header-page">
-        <div class="container">
-            <?php the_title('<h1>', '</h1>'); ?>
-        </div>
-    </header>
-
     <div class="container">
-        <div class="content-main">
-        <div class="content-view">
+    <div class="constrainer">
+      <h1 class="underline-header"><?php the_title(); ?></h1>
+
+      <div class="downloads-summary">
+        <?php the_content(); ?>
+      </div>
+
+      <div class="downloads-layout">
+        <div class="downloads-list">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <div id="post-<?php the_ID(); ?>">
                     <div class="entry-content entry profile-form">
                         <?php the_content(); ?>
-                        <?php if ( $_GET['updated'] == 'true' ) : ?>
+                        <?php if ( $_GET && $_GET['updated'] == 'true' ) : ?>
                             <p class="alert alert-success">Your profile has been updated</p>
                         <?php endif; ?>
                         <?php if ( !is_user_logged_in() ) : ?>
@@ -112,7 +113,7 @@ get_header();
                                     do_action('edit_user_profile',$current_user);
                                 ?>
                                 <p class="form-submit">
-                                    <?php echo $referer; ?>
+                                    <?php //if ($referer): echo $referer; endif; ?>
                                     <input name="updateuser" type="submit" id="updateuser" class="submit btn btn-primary" value="<?php _e('Update', 'profile'); ?>" />
                                     <?php wp_nonce_field( 'update-user' ) ?>
                                     <input name="action" type="hidden" id="action" value="update-user" />
@@ -127,14 +128,15 @@ get_header();
                     <?php _e('Sorry, no page matched your criteria.', 'profile'); ?>
                 </p><!-- .no-data -->
             <?php endif; ?>
-            </div>
-            <div class="content-side always-show">
-            <h2>Your account</h2>
+        </div>
+        <aside class="downloads-account">
+          <h2>Your account</h2>
 
-            <?php dynamic_sidebar('resources-sidebar'); ?>
-        </div>
-        </div>
+          <?php dynamic_sidebar('resources-sidebar'); ?>
+        </aside>
+      </div>
     </div>
+  </div>
 </article>
 
 <?php get_footer(); ?>

@@ -3,16 +3,20 @@
 }
 
 .post-list {
+    display: flex;
+    margin: 0 -40px;
+    flex-wrap: wrap;
+
     .post-list-item {
-        width: 100%;
+        margin: 0 40px 30px 40px;
+        flex: 0 0 100%;
+        @media (min-width: @screen-sm-min) {
+            flex: 0 0 33.3333%;
+            flex-basis: calc(33.3333% - 80px);
+        }
+
         border-bottom: 1px solid @seperator-color;
         padding-bottom: 20px;
-        margin-bottom: 20px;
-
-        @media (min-width: @screen-xs-min) {
-            padding-bottom: 80px;
-            margin-bottom: 80px;
-        }
 
         .post-image {
             width: 100%;

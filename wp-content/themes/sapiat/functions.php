@@ -1,8 +1,8 @@
 <?php
     //require_once('includes/custom-login.php');
-    include('classes/Shortcodes.php');
-    include('classes/social_widget.php');
-    include('classes/contact_widget.php');
+    //include('classes/Shortcodes.php');
+    //include('classes/social_widget.php');
+    //include('classes/contact_widget.php');
 
 
     // Menus
@@ -378,7 +378,7 @@
         register_widget( 'wpb_contact_widget' );
         register_widget( 'wpb_social_widget' );
     }
-    add_action( 'widgets_init', 'wpb_load_widget' );
+   // add_action( 'widgets_init', 'wpb_load_widget' );
 
 
     // Widgets ends

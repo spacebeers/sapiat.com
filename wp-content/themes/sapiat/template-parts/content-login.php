@@ -17,13 +17,13 @@
             );
         ?>
 
-        <?php if ($_GET['login'] == 'failed'): ?>
+        <?php if ($_GET && $_GET['login'] == 'failed'): ?>
             <div class="alert alert-danger">
                 Login failed - please try again
             </div>
         <?php endif; ?>
 
-        <?php if ($_GET['login'] == 'empty'): ?>
+        <?php if ($_GET && $_GET['login'] == 'empty'): ?>
             <div class="alert alert-danger">
                 Login failed - you must enter a username and password
             </div>
