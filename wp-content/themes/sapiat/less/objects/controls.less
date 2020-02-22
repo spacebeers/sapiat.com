@@ -2,6 +2,7 @@
     display: block;
     margin-bottom: 20px;
     position: relative;
+    font-family: @body-font;
 
     .form-control {
         font-size: 1.5rem;
@@ -69,11 +70,17 @@
     label {
         color: #262626 !important;
         text-transform: uppercase !important;
+        font-family: @tertiary-font !important;
+    }
+
+    .wpforms-field-sublabel {
+        font-family: @tertiary-font !important;
     }
 
     input {
         border: 1px solid #E1E1E1 !important;
         border-radius: 0 !important;
+        font-family: @tertiary-font !important;
 
         &::placeholder {
             font-size: 1.3rem;

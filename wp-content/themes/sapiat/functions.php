@@ -25,7 +25,9 @@
     // Theme assets
     function sapiat_theme_assets() {
         wp_register_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap', false );
+        wp_register_style( 'wpb-google-fonts-2', 'https://fonts.googleapis.com/css?family=Raleway&display=swap', false );
         wp_enqueue_style( 'wpb-google-fonts' );
+        wp_enqueue_style( 'wpb-google-fonts-2' );
         wp_register_script( 'sapiat-download', get_template_directory_uri() . '/vendor/multi-download/browser.js', array ( 'jquery' ), NULL, true);
         wp_enqueue_script( 'sapiat-download' );
         wp_register_script( 'sapiat-base', get_template_directory_uri() . '/scripts/theme.js', array( 'jquery' ), NULL, false );
@@ -66,6 +68,8 @@
                     'name' => __( 'Products' ),
                     'singular_name' => __( 'Product' )
                 ),
+                'show_in_rest' => true,
+                'supports' => array('editor'),
                 'hierarchical' => true,
                 'public' => true,
                 'has_archive' => true,
@@ -83,6 +87,8 @@
                 ),
                 'public' => true,
                 'has_archive' => true,
+                'show_in_rest' => true,
+                'supports' => array('editor'),
                 'rewrite' => array('slug' => 'solutions'),
                 'supports' => array('title', 'editor', 'excerpt'),
                 'public' => true,
@@ -97,6 +103,8 @@
                 ),
                 'public' => true,
                 'has_archive' => false,
+                'show_in_rest' => true,
+                'supports' => array('editor'),
                 'rewrite' => array('slug' => 'staff'),
                 'supports' => array('title', 'editor', 'thumbnail'),
                 'exclude_from_search' => true

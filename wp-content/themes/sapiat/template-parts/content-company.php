@@ -35,9 +35,7 @@
 
                     ?>
                     <div class="check-item">
-                        <div class="check-col">
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-                        </div>
+                        <div class="check-col image-check-col" style="background-image: url(<?php echo $image['url']; ?>);"></div>
                         <div class="check-col">
                             <div class="content">
                                 <?php echo $content; ?>
@@ -52,7 +50,7 @@
     <?php if (get_field('show_staff_section')): ?>
         <section class="strip">
             <div class="container">
-                <h2>Meet the team</h2>
+
                 <?php
                     $args = array(
                     'post_type'   => 'staff',

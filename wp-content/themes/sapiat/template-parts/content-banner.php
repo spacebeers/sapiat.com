@@ -4,9 +4,11 @@
     <div class="container">
         <h1>
             <?php
-                if (get_field('bold_title') && get_field('light_title')):
+                if (get_field('bold_title')):
                     the_field('bold_title');
-                    echo '<span class="light-text">'. get_field('light_title') .'</span>';
+                    if (get_field('light_title')):
+                        echo '<span class="light-text">'. get_field('light_title') .'</span>';
+                    endif;
                 else:
                     the_title();
                 endif;

@@ -31,12 +31,13 @@
     }
 
     h1 {
+        text-align: center;
         line-height: 1;
         font-family: @body-font_bold;
         color: @palette-lightest;
-        font-size: 3.5rem;
+        font-size: 4.5rem;
         @media (min-width: @screen-sm-min) {
-            font-size: 6.0rem;
+            font-size: 11.0rem;
         }
 
         span {
@@ -45,6 +46,28 @@
         }
     }
 }
+
+.home {
+    .banner {
+        h1 {
+            text-align: center;
+            line-height: 1;
+            font-family: @body-font_bold;
+            color: @palette-lightest;
+            font-size: 4.0rem;
+            @media (min-width: @screen-sm-min) {
+                font-size: 8.0rem;
+            }
+
+            span {
+                font-family: @body-font_light;
+                display: block;
+            }
+        }
+    }
+}
+
+
 
 .home, .product-template-default, .solution-template-default, .page-template-company-page {
     .site-header {

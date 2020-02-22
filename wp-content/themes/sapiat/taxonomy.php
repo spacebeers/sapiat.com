@@ -1,10 +1,16 @@
 <?php
     get_header();
     $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+    $desc = get_field('page_description', $term);
 ?>
     <div class="container">
         <section class="contents product-page">
-            <h1 class="underline-header"><?php echo apply_filters( 'the_title', $term->name ); ?></h1>
+            <h1 class="underline-header text-center"><?php echo apply_filters( 'the_title', $term->name ); ?></h1>
+
+            <?php if ($desc): ?>
+                <p class="desc text-center"><?php echo $desc; ?></p>
+            <?php endif; ?>
+
             <?php
                 $case_study_cat_slug = get_queried_object()->slug;
                 $case_study_cat_name = get_queried_object()->name;

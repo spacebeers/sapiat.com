@@ -21,7 +21,7 @@
     <section class="strip">
         <div class="container">
             <div class="constrainer">
-                <h2>Discover our Products</h2>
+                <h2>Discover our Solutions</h2>
                 <section class="related-content related-products">
                     <div class="related-grid grid-quarters">
                         <?php
@@ -72,7 +72,7 @@
     <section class="strip strip-dark">
         <div class="container">
             <div class="constrainer">
-                 <h2>Solutions</h2>
+                <h2>Clients</h2>
                 <section class="related-content related-solutions">
                     <div class="related-grid grid-quarters">
                         <?php
