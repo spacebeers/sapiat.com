@@ -23,7 +23,7 @@
                 <?php the_excerpt(); ?>
 
                 <footer>
-                    <a href="<?php the_permalink(); ?>" class="btn" aria-label="Read <?php the_title(); ?>">Read more</a>
+                    <a href="<?php the_permalink(); ?>" class="btn" aria-label="Read <?php the_title(); ?>">More</a>
                 </footer>
             </div>
         </article>

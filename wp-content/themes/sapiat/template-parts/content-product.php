@@ -47,7 +47,7 @@
                                             </a>
                                         </h3>
 
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-small">Read more</a>
+                                        <a href="<?php the_permalink(); ?>" class="btn btn-small">More</a>
                                     </div>
                                 </article>
 

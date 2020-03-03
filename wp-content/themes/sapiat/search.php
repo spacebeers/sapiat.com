@@ -21,7 +21,7 @@
 							<?php the_post_thumbnail('medium') ?>
 							<?php echo substr(get_the_excerpt(), 0, 200); ?>
 							<div class="h-readmore">
-								<a href="<?php the_permalink(); ?>">Read More</a>
+								<a href="<?php the_permalink(); ?>">More</a>
 							</div>
 						</li>
 					<?php
