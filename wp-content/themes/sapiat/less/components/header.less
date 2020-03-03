@@ -186,7 +186,10 @@
 
                 .current-menu-item {
                     a {
-                        color: @palette-lightest;
+                        color: @palette-darkest;
+                        @media (min-width: @screen-md-min) {
+                            color: @palette-lightest;
+                        }
                     }
                 }
 
@@ -194,6 +197,14 @@
                     color: @primary;
                 }
             }
+        }
+    }
+
+    a[href="#"] {
+        cursor: default;
+
+        &:hover {
+            opacity: 1;
         }
     }
 

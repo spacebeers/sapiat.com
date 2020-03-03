@@ -813,21 +813,27 @@ hr {
   line-height: 1;
   font-family: 'd-dindin-bold', sans-serif;
   color: #ffffff;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 @media (min-width: 768px) {
   .home .banner h1 {
-    font-size: 8rem;
+    font-size: 6.5rem;
   }
 }
 .home .banner h1 span {
   font-family: 'd-din_condensedregular', sans-serif;
   display: block;
+  font-size: 2.8rem;
 }
-.home .site-header,
-.product-template-default .site-header,
-.solution-template-default .site-header,
-.page-template-company-page .site-header {
+@media (min-width: 768px) {
+  .home .banner h1 span {
+    font-size: 4rem;
+  }
+}
+.home:not(.no-banner) .site-header,
+.product-template-default:not(.no-banner) .site-header,
+.solution-template-default:not(.no-banner) .site-header,
+.page-template-company-page:not(.no-banner) .site-header {
   background: transparent;
   position: relative;
   z-index: 1;
@@ -1204,10 +1210,21 @@ hr {
   white-space: nowrap;
 }
 .site-header nav ul ul .current-menu-item a {
-  color: #ffffff;
+  color: #000000;
+}
+@media (min-width: 992px) {
+  .site-header nav ul ul .current-menu-item a {
+    color: #ffffff;
+  }
 }
 .site-header nav ul ul a {
   color: #071559;
+}
+.site-header a[href="#"] {
+  cursor: default;
+}
+.site-header a[href="#"]:hover {
+  opacity: 1;
 }
 .site-header button {
   background: transparent;

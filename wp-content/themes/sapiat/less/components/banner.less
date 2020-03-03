@@ -54,14 +54,18 @@
             line-height: 1;
             font-family: @body-font_bold;
             color: @palette-lightest;
-            font-size: 4.0rem;
+            font-size: 3.5rem;
             @media (min-width: @screen-sm-min) {
-                font-size: 8.0rem;
+                font-size: 6.5rem;
             }
 
             span {
                 font-family: @body-font_light;
                 display: block;
+                font-size: 2.8rem;
+                @media (min-width: @screen-sm-min) {
+                    font-size: 4rem;
+                }
             }
         }
     }
@@ -70,10 +74,12 @@
 
 
 .home, .product-template-default, .solution-template-default, .page-template-company-page {
-    .site-header {
-        background: transparent;
-        position: relative;
-        z-index: 1;
+    &:not(.no-banner) {
+        .site-header {
+            background: transparent;
+            position: relative;
+            z-index: 1;
+        }
     }
 
     .banner {

@@ -1,18 +1,30 @@
+<?php
+    $classy = "page company-page main-content";
+    if (!get_field('banner')):
+         $classy = "page company-page main-content no-banner";
+    endif;
+?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class("page company-page main-content"); ?>>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class($classy); ?>>
     <?php
         if (get_field('banner')):
             get_template_part( 'template-parts/content-banner' );
         endif;
     ?>
      <div class="container">
-        <div class="constrainer">
             <?php
-                if (!get_field('banner')):
-                    the_title('<h1>', "</h1>");
+                if (!get_field('banner')): ?>
+                    <header style="text-align: center;">
+                        <h1 class="underline-header">
+                            <?php the_title(); ?>
+                        </h1>
+                    </header>
+            <?php
                 endif;
             ?>
 
+        <div class="constrainer">
             <div class="company-content">
                 <?php the_content(); ?>
             </div>
@@ -54,7 +66,8 @@
                 <?php
                     $args = array(
                     'post_type'   => 'staff',
-                    'post_status' => 'publish'
+                    'post_status' => 'publish',
+                    'posts_per_page' => 100
                 );
 
                     $testimonials = new WP_Query( $args );

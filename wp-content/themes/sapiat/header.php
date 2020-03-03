@@ -5,7 +5,7 @@
     $page_id = get_queried_object_id();
     $page_tile = get_the_title($page_id);
     $has_banner = get_field('banner', $page_id) ? true : false;
-    //$has_banner ? "page-has-banner" : "no-banner"
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( $has_banner ? "page-has-banner" : "no-banner" ); ?>>
     <header class="site-header" id="header">
         <div class="container">
             <a class="logo" href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
