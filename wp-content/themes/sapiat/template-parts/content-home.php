@@ -21,12 +21,12 @@
     <section class="strip strip-dark">
         <div class="container">
             <div class="constrainer">
-                <h2>Clients</h2>
+                <h2>Products</h2>
                 <section class="related-content related-solutions">
-                    <div class="related-grid grid-quarters">
+                    <div class="related-grid grid-fifths">
                         <?php
                             $currentID = get_the_ID();
-                            query_posts(array('orderby' => 'rand', 'post_type' => array('solution'), 'showposts' => 3, 'post__not_in' => array($currentID)));
+                            query_posts(array('orderby' => 'rand', 'post_type' => array('solution'), 'showposts' => 100, 'post__not_in' => array($currentID)));
 
                             if (have_posts()) :
                                 while (have_posts()) : the_post(); ?>
