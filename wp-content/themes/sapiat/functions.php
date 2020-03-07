@@ -1,5 +1,5 @@
 <?php
-    //require_once('includes/custom-login.php');
+    require_once('includes/custom-login.php');
     //include('classes/Shortcodes.php');
     //include('classes/social_widget.php');
     //include('classes/contact_widget.php');

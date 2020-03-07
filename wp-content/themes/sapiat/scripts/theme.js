@@ -20,8 +20,6 @@ jQuery(document).ready(function () {
         } else {
             $header.removeClass('stuck');
         }
-
-        //$body.css('margin-top', $header.outerHeight())
     }
 
     headCheck()

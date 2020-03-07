@@ -15,7 +15,7 @@
     <title><?php wp_title(); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css?buster=1.0.1">
 	<?php wp_head(); ?>
 </head>
 

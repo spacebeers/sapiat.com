@@ -71,7 +71,7 @@
     svg {
         color: @primary;
         width: 60px;
-        height: auto;
+        height: 60px;
         margin-bottom: 15px;
     }
 
@@ -105,11 +105,18 @@
 
 .related-grid {
     font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
-    @media (min-width: @screen-sm-min) {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+    &.grid-center {
+        @media (min-width: @screen-sm-min) {
+            justify-content: center;
+        }
+
+        @media (min-width: @screen-md-min) {
+            justify-content: space-between;
+        }
     }
 
     .related-article {
@@ -131,6 +138,7 @@
 
     &.grid-halves {
         .related-article {
+            flex: 0 0 100%;
             @media (min-width: @screen-sm-min) {
                 flex: 0 0 40%;
             }
@@ -139,6 +147,7 @@
 
     &.grid-quarters {
         .related-article {
+            flex: 0 0 100%;
             @media (min-width: @screen-sm-min) {
                 flex: 0 0 25%;
             }
@@ -147,7 +156,11 @@
 
     &.grid-fifths {
         .related-article {
+            flex: 0 0 50%;
             @media (min-width: @screen-sm-min) {
+                flex: 0 0 33.33%;
+            }
+            @media (min-width: @screen-md-min) {
                 flex: 0 0 20%;
             }
         }
@@ -163,6 +176,7 @@
 
     h3 {
         font-family: @body-font_bold;
+        margin-bottom: 0;
         line-height: 2.9rem;
         font-size: 2.0rem;
         @media (min-width: @screen-sm-min) {
